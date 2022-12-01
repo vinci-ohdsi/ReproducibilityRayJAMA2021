@@ -130,173 +130,6 @@ SELECT 18 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
 ) I
 ) C
 ;
- CREATE CLUSTERED COLUMNSTORE INDEX idx ON #Codesets;
--- Begin Visit Occurrence Criteria
-select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
-       C.visit_occurrence_id, C.visit_start_date as sort_date
-INTO #VisitCrit0_1
-from 
-(
-  select vo.* 
-  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
-JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
-) C
-
-
-;
- CREATE CLUSTERED COLUMNSTORE INDEX idx ON #VisitCrit0_1;
--- End Visit Occurrence Criteria
--- Begin Condition Occurrence Criteria
-SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
-  C.visit_occurrence_id, C.condition_start_date as sort_date
-INTO #ConditionCrit18_1
-FROM 
-(
-  SELECT co.* 
-  FROM @cdm_database_schema.CONDITION_OCCURRENCE co
-  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 18)
-) C
-
-
-;
- CREATE CLUSTERED COLUMNSTORE INDEX idx ON #ConditionCrit18_1;
--- End Condition Occurrence Criteria
--- Begin Condition Occurrence Criteria
-SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
-  C.visit_occurrence_id, C.condition_start_date as sort_date
-INTO #ConditionCrit12_1
-FROM 
-(
-  SELECT co.* 
-  FROM @cdm_database_schema.CONDITION_OCCURRENCE co
-  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 12)
-) C
-
-
-;
- CREATE CLUSTERED COLUMNSTORE INDEX idx ON #ConditionCrit12_1;
--- End Condition Occurrence Criteria
--- Begin Condition Occurrence Criteria
-SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
-  C.visit_occurrence_id, C.condition_start_date as sort_date
-INTO #ConditionCrit3_1
-FROM 
-(
-  SELECT co.* 
-  FROM @cdm_database_schema.CONDITION_OCCURRENCE co
-  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 3)
-) C
-
-
-;
- CREATE CLUSTERED COLUMNSTORE INDEX idx ON #ConditionCrit3_1;
--- End Condition Occurrence Criteria
--- Begin Procedure Occurrence Criteria
-select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, DATEADD(d,1,C.procedure_date) as END_DATE,
-       C.visit_occurrence_id, C.procedure_date as sort_date
-INTO #ProcedureCrit16_1
-from 
-(
-  select po.* 
-  FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
-JOIN #Codesets cs on (po.procedure_concept_id = cs.concept_id and cs.codeset_id = 16)
-) C
-
-
-;
- CREATE CLUSTERED COLUMNSTORE INDEX idx ON #ProcedureCrit16_1;
--- End Procedure Occurrence Criteria
--- Begin Condition Occurrence Criteria
-SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
-  C.visit_occurrence_id, C.condition_start_date as sort_date
-INTO #ConditionCrit13_1
-FROM 
-(
-  SELECT co.* 
-  FROM @cdm_database_schema.CONDITION_OCCURRENCE co
-  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 13)
-) C
-
-
-;
- CREATE CLUSTERED COLUMNSTORE INDEX idx ON #ConditionCrit13_1;
--- End Condition Occurrence Criteria
--- Begin Condition Occurrence Criteria
-SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
-  C.visit_occurrence_id, C.condition_start_date as sort_date
-INTO #ConditionCrit7_1
-FROM 
-(
-  SELECT co.* 
-  FROM @cdm_database_schema.CONDITION_OCCURRENCE co
-  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 7)
-) C
-
-
-;
- CREATE CLUSTERED COLUMNSTORE INDEX idx ON #ConditionCrit7_1;
--- End Condition Occurrence Criteria
--- Begin Condition Occurrence Criteria
-SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
-  C.visit_occurrence_id, C.condition_start_date as sort_date
-INTO #ConditionCrit14_1
-FROM 
-(
-  SELECT co.* 
-  FROM @cdm_database_schema.CONDITION_OCCURRENCE co
-  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 14)
-) C
-
-
-;
- CREATE CLUSTERED COLUMNSTORE INDEX idx ON #ConditionCrit14_1;
--- End Condition Occurrence Criteria
--- Begin Condition Occurrence Criteria
-SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
-  C.visit_occurrence_id, C.condition_start_date as sort_date
-INTO #ConditionCrit8_1
-FROM 
-(
-  SELECT co.* 
-  FROM @cdm_database_schema.CONDITION_OCCURRENCE co
-  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 8)
-) C
-
-
-;
- CREATE CLUSTERED COLUMNSTORE INDEX idx ON #ConditionCrit8_1;
--- End Condition Occurrence Criteria
--- Begin Condition Occurrence Criteria
-SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
-  C.visit_occurrence_id, C.condition_start_date as sort_date
-INTO #ConditionCrit15_1
-FROM 
-(
-  SELECT co.* 
-  FROM @cdm_database_schema.CONDITION_OCCURRENCE co
-  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 15)
-) C
-
-
-;
- CREATE CLUSTERED COLUMNSTORE INDEX idx ON #ConditionCrit15_1;
--- End Condition Occurrence Criteria
--- Begin Condition Occurrence Criteria
-SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
-  C.visit_occurrence_id, C.condition_start_date as sort_date
-INTO #ConditionCrit17_1
-FROM 
-(
-  SELECT co.* 
-  FROM @cdm_database_schema.CONDITION_OCCURRENCE co
-  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 17)
-) C
-
-
-;
- CREATE CLUSTERED COLUMNSTORE INDEX idx ON #ConditionCrit17_1;
--- End Condition Occurrence Criteria
-
 
 with primary_events (event_id, person_id, start_date, end_date, op_start_date, op_end_date, visit_occurrence_id) as
 (
@@ -310,8 +143,18 @@ FROM
   FROM 
   (
   select PE.person_id, PE.event_id, PE.start_date, PE.end_date, PE.visit_occurrence_id, PE.sort_date FROM (
-SELECT * FROM #VisitCrit0_1
+-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 
 ) PE
 JOIN (
@@ -321,8 +164,18 @@ FROM
 (
   select E.person_id, E.event_id 
   FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
@@ -333,15 +186,35 @@ JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id
 select 0 as index_id, cc.person_id, cc.event_id
 from (SELECT p.person_id, p.event_id 
 FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
 ) P
 JOIN (
-  SELECT * FROM #ConditionCrit18_1
+  -- Begin Condition Occurrence Criteria
+SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
+  C.visit_occurrence_id, C.condition_start_date as sort_date
+FROM 
+(
+  SELECT co.* 
+  FROM @cdm_database_schema.CONDITION_OCCURRENCE co
+  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 18)
+) C
 
+
+-- End Condition Occurrence Criteria
 
 ) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,0,P.START_DATE) AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= DATEADD(day,0,P.END_DATE) ) cc 
 GROUP BY cc.person_id, cc.event_id
@@ -355,8 +228,18 @@ FROM
 (
   select E.person_id, E.event_id 
   FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
@@ -367,15 +250,35 @@ JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id
 select 0 as index_id, cc.person_id, cc.event_id
 from (SELECT p.person_id, p.event_id 
 FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
 ) P
 JOIN (
-  SELECT * FROM #ConditionCrit12_1
+  -- Begin Condition Occurrence Criteria
+SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
+  C.visit_occurrence_id, C.condition_start_date as sort_date
+FROM 
+(
+  SELECT co.* 
+  FROM @cdm_database_schema.CONDITION_OCCURRENCE co
+  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 12)
+) C
 
+
+-- End Condition Occurrence Criteria
 
 ) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,0,P.START_DATE) AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= DATEADD(day,0,P.END_DATE) ) cc 
 GROUP BY cc.person_id, cc.event_id
@@ -389,8 +292,18 @@ FROM
 (
   select E.person_id, E.event_id 
   FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
@@ -401,15 +314,35 @@ JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id
 select 0 as index_id, cc.person_id, cc.event_id
 from (SELECT p.person_id, p.event_id 
 FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
 ) P
 JOIN (
-  SELECT * FROM #ConditionCrit3_1
+  -- Begin Condition Occurrence Criteria
+SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
+  C.visit_occurrence_id, C.condition_start_date as sort_date
+FROM 
+(
+  SELECT co.* 
+  FROM @cdm_database_schema.CONDITION_OCCURRENCE co
+  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 3)
+) C
 
+
+-- End Condition Occurrence Criteria
 
 ) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,0,P.START_DATE) AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= DATEADD(day,0,P.END_DATE) ) cc 
 GROUP BY cc.person_id, cc.event_id
@@ -421,15 +354,35 @@ UNION ALL
 select 1 as index_id, cc.person_id, cc.event_id
 from (SELECT p.person_id, p.event_id 
 FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
 ) P
 JOIN (
-  SELECT * FROM #ProcedureCrit16_1
+  -- Begin Procedure Occurrence Criteria
+select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, DATEADD(d,1,C.procedure_date) as END_DATE,
+       C.visit_occurrence_id, C.procedure_date as sort_date
+from 
+(
+  select po.* 
+  FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
+JOIN #Codesets cs on (po.procedure_concept_id = cs.concept_id and cs.codeset_id = 16)
+) C
 
+
+-- End Procedure Occurrence Criteria
 
 ) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,0,P.START_DATE) AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= DATEADD(day,0,P.END_DATE) ) cc 
 GROUP BY cc.person_id, cc.event_id
@@ -455,8 +408,18 @@ FROM
 (
   select E.person_id, E.event_id 
   FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
@@ -467,15 +430,35 @@ JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id
 select 0 as index_id, cc.person_id, cc.event_id
 from (SELECT p.person_id, p.event_id 
 FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
 ) P
 JOIN (
-  SELECT * FROM #ConditionCrit13_1
+  -- Begin Condition Occurrence Criteria
+SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
+  C.visit_occurrence_id, C.condition_start_date as sort_date
+FROM 
+(
+  SELECT co.* 
+  FROM @cdm_database_schema.CONDITION_OCCURRENCE co
+  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 13)
+) C
 
+
+-- End Condition Occurrence Criteria
 
 ) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,0,P.START_DATE) AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= DATEADD(day,0,P.END_DATE) ) cc 
 GROUP BY cc.person_id, cc.event_id
@@ -489,8 +472,18 @@ FROM
 (
   select E.person_id, E.event_id 
   FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
@@ -501,15 +494,35 @@ JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id
 select 0 as index_id, cc.person_id, cc.event_id
 from (SELECT p.person_id, p.event_id 
 FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
 ) P
 JOIN (
-  SELECT * FROM #ConditionCrit7_1
+  -- Begin Condition Occurrence Criteria
+SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
+  C.visit_occurrence_id, C.condition_start_date as sort_date
+FROM 
+(
+  SELECT co.* 
+  FROM @cdm_database_schema.CONDITION_OCCURRENCE co
+  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 7)
+) C
 
+
+-- End Condition Occurrence Criteria
 
 ) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,0,P.START_DATE) AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= DATEADD(day,0,P.END_DATE) ) cc 
 GROUP BY cc.person_id, cc.event_id
@@ -521,15 +534,35 @@ UNION ALL
 select 1 as index_id, cc.person_id, cc.event_id
 from (SELECT p.person_id, p.event_id 
 FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
 ) P
 JOIN (
-  SELECT * FROM #ProcedureCrit16_1
+  -- Begin Procedure Occurrence Criteria
+select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, DATEADD(d,1,C.procedure_date) as END_DATE,
+       C.visit_occurrence_id, C.procedure_date as sort_date
+from 
+(
+  select po.* 
+  FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
+JOIN #Codesets cs on (po.procedure_concept_id = cs.concept_id and cs.codeset_id = 16)
+) C
 
+
+-- End Procedure Occurrence Criteria
 
 ) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,0,P.START_DATE) AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= DATEADD(day,0,P.END_DATE) ) cc 
 GROUP BY cc.person_id, cc.event_id
@@ -555,8 +588,18 @@ FROM
 (
   select E.person_id, E.event_id 
   FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
@@ -567,15 +610,35 @@ JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id
 select 0 as index_id, cc.person_id, cc.event_id
 from (SELECT p.person_id, p.event_id 
 FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
 ) P
 JOIN (
-  SELECT * FROM #ConditionCrit14_1
+  -- Begin Condition Occurrence Criteria
+SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
+  C.visit_occurrence_id, C.condition_start_date as sort_date
+FROM 
+(
+  SELECT co.* 
+  FROM @cdm_database_schema.CONDITION_OCCURRENCE co
+  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 14)
+) C
 
+
+-- End Condition Occurrence Criteria
 
 ) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,0,P.START_DATE) AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= DATEADD(day,0,P.END_DATE) ) cc 
 GROUP BY cc.person_id, cc.event_id
@@ -589,8 +652,18 @@ FROM
 (
   select E.person_id, E.event_id 
   FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
@@ -601,15 +674,35 @@ JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id
 select 0 as index_id, cc.person_id, cc.event_id
 from (SELECT p.person_id, p.event_id 
 FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
 ) P
 JOIN (
-  SELECT * FROM #ConditionCrit8_1
+  -- Begin Condition Occurrence Criteria
+SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
+  C.visit_occurrence_id, C.condition_start_date as sort_date
+FROM 
+(
+  SELECT co.* 
+  FROM @cdm_database_schema.CONDITION_OCCURRENCE co
+  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 8)
+) C
 
+
+-- End Condition Occurrence Criteria
 
 ) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,0,P.START_DATE) AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= DATEADD(day,0,P.END_DATE) ) cc 
 GROUP BY cc.person_id, cc.event_id
@@ -621,15 +714,35 @@ UNION ALL
 select 1 as index_id, cc.person_id, cc.event_id
 from (SELECT p.person_id, p.event_id 
 FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
 ) P
 JOIN (
-  SELECT * FROM #ProcedureCrit16_1
+  -- Begin Procedure Occurrence Criteria
+select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, DATEADD(d,1,C.procedure_date) as END_DATE,
+       C.visit_occurrence_id, C.procedure_date as sort_date
+from 
+(
+  select po.* 
+  FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
+JOIN #Codesets cs on (po.procedure_concept_id = cs.concept_id and cs.codeset_id = 16)
+) C
 
+
+-- End Procedure Occurrence Criteria
 
 ) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,0,P.START_DATE) AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= DATEADD(day,0,P.END_DATE) ) cc 
 GROUP BY cc.person_id, cc.event_id
@@ -655,8 +768,18 @@ FROM
 (
   select E.person_id, E.event_id 
   FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
@@ -667,15 +790,35 @@ JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id
 select 0 as index_id, cc.person_id, cc.event_id
 from (SELECT p.person_id, p.event_id 
 FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
 ) P
 JOIN (
-  SELECT * FROM #ConditionCrit15_1
+  -- Begin Condition Occurrence Criteria
+SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
+  C.visit_occurrence_id, C.condition_start_date as sort_date
+FROM 
+(
+  SELECT co.* 
+  FROM @cdm_database_schema.CONDITION_OCCURRENCE co
+  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 15)
+) C
 
+
+-- End Condition Occurrence Criteria
 
 ) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,0,P.START_DATE) AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= DATEADD(day,0,P.END_DATE) ) cc 
 GROUP BY cc.person_id, cc.event_id
@@ -689,8 +832,18 @@ FROM
 (
   select E.person_id, E.event_id 
   FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
@@ -701,15 +854,35 @@ JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id
 select 0 as index_id, cc.person_id, cc.event_id
 from (SELECT p.person_id, p.event_id 
 FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
 ) P
 JOIN (
-  SELECT * FROM #ConditionCrit17_1
+  -- Begin Condition Occurrence Criteria
+SELECT C.person_id, C.condition_occurrence_id as event_id, C.condition_start_date as start_date, COALESCE(C.condition_end_date, DATEADD(day,1,C.condition_start_date)) as end_date,
+  C.visit_occurrence_id, C.condition_start_date as sort_date
+FROM 
+(
+  SELECT co.* 
+  FROM @cdm_database_schema.CONDITION_OCCURRENCE co
+  JOIN #Codesets cs on (co.condition_concept_id = cs.concept_id and cs.codeset_id = 17)
+) C
 
+
+-- End Condition Occurrence Criteria
 
 ) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,0,P.START_DATE) AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= DATEADD(day,0,P.END_DATE) ) cc 
 GROUP BY cc.person_id, cc.event_id
@@ -721,14 +894,35 @@ UNION ALL
 select 1 as index_id, cc.person_id, cc.event_id
 from (SELECT p.person_id, p.event_id 
 FROM (SELECT Q.person_id, Q.event_id, Q.start_date, Q.end_date, Q.visit_occurrence_id, OP.observation_period_start_date as op_start_date, OP.observation_period_end_date as op_end_date
-FROM (SELECT * FROM #VisitCrit0_1
+FROM (-- Begin Visit Occurrence Criteria
+select C.person_id, C.visit_occurrence_id as event_id, C.visit_start_date as start_date, C.visit_end_date as end_date,
+       C.visit_occurrence_id, C.visit_start_date as sort_date
+from 
+(
+  select vo.* 
+  FROM @cdm_database_schema.VISIT_OCCURRENCE vo
+JOIN #Codesets cs on (vo.visit_concept_id = cs.concept_id and cs.codeset_id = 0)
+) C
 
+
+-- End Visit Occurrence Criteria
 ) Q
 JOIN @cdm_database_schema.OBSERVATION_PERIOD OP on Q.person_id = OP.person_id 
   and OP.observation_period_start_date <= Q.start_date and OP.observation_period_end_date >= Q.start_date
 ) P
 JOIN (
-  SELECT * FROM #ProcedureCrit16_1
+  -- Begin Procedure Occurrence Criteria
+select C.person_id, C.procedure_occurrence_id as event_id, C.procedure_date as start_date, DATEADD(d,1,C.procedure_date) as END_DATE,
+       C.visit_occurrence_id, C.procedure_date as sort_date
+from 
+(
+  select po.* 
+  FROM @cdm_database_schema.PROCEDURE_OCCURRENCE po
+JOIN #Codesets cs on (po.procedure_concept_id = cs.concept_id and cs.codeset_id = 16)
+) C
+
+
+-- End Procedure Occurrence Criteria
 
 ) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= DATEADD(day,0,P.START_DATE) AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= DATEADD(day,0,P.END_DATE) ) cc 
 GROUP BY cc.person_id, cc.event_id
