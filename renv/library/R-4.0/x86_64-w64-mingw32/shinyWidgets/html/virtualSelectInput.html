@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Virtual Select Input</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for virtualSelectInput {shinyWidgets}"><tr><td>virtualSelectInput {shinyWidgets}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Virtual Select Input</h2>
+
+<h3>Description</h3>
+
+<p>A select dropdown widget made for performance,
+based on <a href="https://github.com/sa-si-dev/virtual-select">virtual-select</a> JavaScript library.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+virtualSelectInput(
+  inputId,
+  label,
+  choices,
+  selected = NULL,
+  multiple = FALSE,
+  search = FALSE,
+  hideClearButton = !multiple,
+  autoSelectFirstOption = !multiple,
+  showSelectedOptionsFirst = FALSE,
+  showValueAsTags = FALSE,
+  optionsCount = 10,
+  noOfDisplayValues = 50,
+  allowNewOption = FALSE,
+  disableSelectAll = !multiple,
+  disableOptionGroupCheckbox = !multiple,
+  disabled = FALSE,
+  ...,
+  stateInput = TRUE,
+  html = FALSE,
+  inline = FALSE,
+  width = NULL
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>inputId</code></td>
+<td>
+<p>The <code>input</code> slot that will be used to access the value.</p>
+</td></tr>
+<tr valign="top"><td><code>label</code></td>
+<td>
+<p>Display label for the control, or <code>NULL</code> for no label.</p>
+</td></tr>
+<tr valign="top"><td><code>choices</code></td>
+<td>
+<p>List of values to select from.
+You can use:
+</p>
+
+<ul>
+<li> <p><code>vector</code> use a simple vector for better performance.
+</p>
+</li>
+<li> <p><code style="white-space: pre;">named list</code> / <code style="white-space: pre;">named vector</code> in the same way as with <code><a href="../../shiny/html/selectInput.html">shiny::selectInput()</a></code>
+</p>
+</li>
+<li><p> custom formatted <code>list</code> allowing to use more options, must correspond to <a href="https://sa-si-dev.github.io/virtual-select/#/properties">virtual-select specifications</a>
+</p>
+</li>
+<li><p> output of <code><a href="prepare_choices.html">prepare_choices()</a></code>
+</p>
+</li></ul>
+</td></tr>
+<tr valign="top"><td><code>selected</code></td>
+<td>
+<p>The initially selected value (or multiple values if <code>multiple = TRUE</code>). If not specified then defaults to the first value for
+single-select lists and no values for multiple select lists.</p>
+</td></tr>
+<tr valign="top"><td><code>multiple</code></td>
+<td>
+<p>Is selection of multiple items allowed?</p>
+</td></tr>
+<tr valign="top"><td><code>search</code></td>
+<td>
+<p>Enable search feature.</p>
+</td></tr>
+<tr valign="top"><td><code>hideClearButton</code></td>
+<td>
+<p>Hide clear value button.</p>
+</td></tr>
+<tr valign="top"><td><code>autoSelectFirstOption</code></td>
+<td>
+<p>Select first option by default on load.</p>
+</td></tr>
+<tr valign="top"><td><code>showSelectedOptionsFirst</code></td>
+<td>
+<p>Show selected options at the top of the dropbox.</p>
+</td></tr>
+<tr valign="top"><td><code>showValueAsTags</code></td>
+<td>
+<p>Show each selected values as tags with remove icon.</p>
+</td></tr>
+<tr valign="top"><td><code>optionsCount</code></td>
+<td>
+<p>No.of options to show on viewport.</p>
+</td></tr>
+<tr valign="top"><td><code>noOfDisplayValues</code></td>
+<td>
+<p>Maximum no.of values to show in the tooltip for multi-select.</p>
+</td></tr>
+<tr valign="top"><td><code>allowNewOption</code></td>
+<td>
+<p>Allow to add new option by searching.</p>
+</td></tr>
+<tr valign="top"><td><code>disableSelectAll</code></td>
+<td>
+<p>Disable select all feature of multiple select.</p>
+</td></tr>
+<tr valign="top"><td><code>disableOptionGroupCheckbox</code></td>
+<td>
+<p>Disable option group title checkbox.</p>
+</td></tr>
+<tr valign="top"><td><code>disabled</code></td>
+<td>
+<p>Disable entire dropdown.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Other arguments passed to JavaScript method, see
+<a href="https://sa-si-dev.github.io/virtual-select/#/properties">virtual-select documentation</a> for a full list of options.</p>
+</td></tr>
+<tr valign="top"><td><code>stateInput</code></td>
+<td>
+<p>Activate or deactivate the special input value <code style="white-space: pre;">input$&lt;inputId&gt;_open</code> to know if the menu is opened or not, see details.</p>
+</td></tr>
+<tr valign="top"><td><code>html</code></td>
+<td>
+<p>Allow usage of HTML in choices.</p>
+</td></tr>
+<tr valign="top"><td><code>inline</code></td>
+<td>
+<p>Display inline with label or not.</p>
+</td></tr>
+<tr valign="top"><td><code>width</code></td>
+<td>
+<p>The width of the input, e.g. <code>'400px'</code>, or <code>'100%'</code>;
+see <code><a href="../../shiny/html/validateCssUnit.html">validateCssUnit()</a></code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A <code>shiny.tag</code> object that can be used in a UI definition.
+</p>
+
+
+<h3>Note</h3>
+
+<p>State of the menu (open or close) is accessible server-side through the input value:
+<code style="white-space: pre;">input$&lt;inputId&gt;_open</code>, which can be <code>TRUE</code> (opened) or <code>FALSE</code> (closed) or <code>NULL</code> (when initialized).
+</p>
+
+
+<h3>See Also</h3>
+
+
+<ul>
+<li> <p><code><a href="demoVirtualSelect.html">demoVirtualSelect()</a></code> for demo apps
+</p>
+</li>
+<li> <p><code><a href="updateVirtualSelect.html">updateVirtualSelect()</a></code> for updating from server
+</p>
+</li></ul>
+
+
+
+<h3>Examples</h3>
+
+<pre>
+library(shiny)
+library(shinyWidgets)
+
+ui &lt;- fluidPage(
+  tags$h2("Virtual Select"),
+
+  fluidRow(
+    column(
+      width = 4,
+      virtualSelectInput(
+        inputId = "single",
+        label = "Single select :",
+        choices = month.name,
+        search = TRUE
+      ),
+      virtualSelectInput(
+        inputId = "multiple",
+        label = "Multiple select:",
+        choices = setNames(month.abb, month.name),
+        multiple = TRUE
+      )
+    ),
+    column(
+      width = 4,
+      tags$b("Single select :"),
+      verbatimTextOutput("res_single"),
+      tags$b("Is virtual select open ?"),
+      verbatimTextOutput(outputId = "res_single_open"),
+
+      tags$br(),
+
+      tags$b("Multiple select :"),
+      verbatimTextOutput("res_multiple"),
+      tags$b("Is virtual select open ?"),
+      verbatimTextOutput(outputId = "res_multiple_open")
+    )
+  )
+
+
+)
+
+server &lt;- function(input, output, session) {
+
+  output$res_single &lt;- renderPrint(input$single)
+  output$res_single_open &lt;- renderPrint(input$single_open)
+
+  output$res_multiple &lt;- renderPrint(input$multiple)
+  output$res_multiple_open &lt;- renderPrint(input$multiple_open)
+
+}
+
+if (interactive())
+  shinyApp(ui, server)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>shinyWidgets</em> version 0.7.5 <a href="00Index.html">Index</a>]</div>
+</body></html>

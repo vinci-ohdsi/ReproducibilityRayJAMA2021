@@ -1,0 +1,27 @@
+Package: VaTools
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1.0
+Author: Who wrote it
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 4.0), DatabaseConnector (>= 3.0.0)
+Imports: SqlRender (>= 1.6.6), stringr, dplyr
+RoxygenNote: 7.1.2
+RemoteType: github
+RemoteHost: api.github.com
+RemoteRepo: VaTools
+RemoteUsername: suchard-group
+RemoteRef: HEAD
+RemoteSha: 4930cf93dfc63059d8742dcb3c53ba7c4c4576fe
+GithubRepo: VaTools
+GithubUsername: suchard-group
+GithubRef: HEAD
+GithubSHA1: 4930cf93dfc63059d8742dcb3c53ba7c4c4576fe
+NeedsCompilation: no
+Packaged: 2022-12-01 21:12:14 UTC; msuch
+Built: R 4.0.3; ; 2022-12-01 21:12:15 UTC; windows
