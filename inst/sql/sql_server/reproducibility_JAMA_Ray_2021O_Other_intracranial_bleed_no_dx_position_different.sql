@@ -452,3 +452,13 @@ DROP TABLE #included_events;
 
 TRUNCATE TABLE #Codesets;
 DROP TABLE #Codesets;
+ 
+-- DELETE TEMP TABLES
+ TRUNCATE TABLE #ConditionCrit1_1;
+DROP TABLE #ConditionCrit1_1;
+
+TRUNCATE TABLE #ConditionCrit2_1;
+DROP TABLE #ConditionCrit2_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;

@@ -17,11 +17,11 @@ RemoteHost: api.github.com
 RemoteRepo: VaTools
 RemoteUsername: suchard-group
 RemoteRef: HEAD
-RemoteSha: 4930cf93dfc63059d8742dcb3c53ba7c4c4576fe
+RemoteSha: fc7d99c36cf2b6af02d5a82ba0077eb3633adcd1
 GithubRepo: VaTools
 GithubUsername: suchard-group
 GithubRef: HEAD
-GithubSHA1: 4930cf93dfc63059d8742dcb3c53ba7c4c4576fe
+GithubSHA1: fc7d99c36cf2b6af02d5a82ba0077eb3633adcd1
 NeedsCompilation: no
-Packaged: 2022-12-01 21:12:14 UTC; msuch
-Built: R 4.0.3; ; 2022-12-01 21:12:15 UTC; windows
+Packaged: 2022-12-02 16:23:02 UTC; msuch
+Built: R 4.0.3; ; 2022-12-02 16:23:03 UTC; windows

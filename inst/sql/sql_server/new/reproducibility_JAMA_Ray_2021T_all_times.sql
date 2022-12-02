@@ -2509,3 +2509,148 @@ DROP TABLE #included_events;
 
 TRUNCATE TABLE #Codesets;
 DROP TABLE #Codesets;
+ 
+-- DELETE TEMP TABLES
+ TRUNCATE TABLE #DrugCrit0_1;
+DROP TABLE #DrugCrit0_1;
+
+TRUNCATE TABLE #DrugCritNA_1;
+DROP TABLE #DrugCritNA_1;
+
+TRUNCATE TABLE #VisitCrit1_1;
+DROP TABLE #VisitCrit1_1;
+
+TRUNCATE TABLE #ProcedureCrit30_1;
+DROP TABLE #ProcedureCrit30_1;
+
+TRUNCATE TABLE #ObservationCrit30_1;
+DROP TABLE #ObservationCrit30_1;
+
+TRUNCATE TABLE #ConditionCrit31_1;
+DROP TABLE #ConditionCrit31_1;
+
+TRUNCATE TABLE #VisitCrit2_1;
+DROP TABLE #VisitCrit2_1;
+
+TRUNCATE TABLE #VisitCrit18_2;
+DROP TABLE #VisitCrit18_2;
+
+TRUNCATE TABLE #DrugCrit3_1;
+DROP TABLE #DrugCrit3_1;
+
+TRUNCATE TABLE #DrugCrit4_1;
+DROP TABLE #DrugCrit4_1;
+
+TRUNCATE TABLE #DrugCrit5_1;
+DROP TABLE #DrugCrit5_1;
+
+TRUNCATE TABLE #ObservationCrit6_1;
+DROP TABLE #ObservationCrit6_1;
+
+TRUNCATE TABLE #ConditionCrit7_1;
+DROP TABLE #ConditionCrit7_1;
+
+TRUNCATE TABLE #ConditionCrit8_1;
+DROP TABLE #ConditionCrit8_1;
+
+TRUNCATE TABLE #ConditionCrit10_1;
+DROP TABLE #ConditionCrit10_1;
+
+TRUNCATE TABLE #ProcedureCrit9_1;
+DROP TABLE #ProcedureCrit9_1;
+
+TRUNCATE TABLE #ConditionCrit11_1;
+DROP TABLE #ConditionCrit11_1;
+
+TRUNCATE TABLE #ConditionCrit12_1;
+DROP TABLE #ConditionCrit12_1;
+
+TRUNCATE TABLE #ProcedureCrit13_1;
+DROP TABLE #ProcedureCrit13_1;
+
+TRUNCATE TABLE #ProcedureCrit14_1;
+DROP TABLE #ProcedureCrit14_1;
+
+TRUNCATE TABLE #ProcedureCrit20_1;
+DROP TABLE #ProcedureCrit20_1;
+
+TRUNCATE TABLE #ConditionCrit21_1;
+DROP TABLE #ConditionCrit21_1;
+
+TRUNCATE TABLE #ConditionCrit29_1;
+DROP TABLE #ConditionCrit29_1;
+
+TRUNCATE TABLE #ConditionCrit15_1;
+DROP TABLE #ConditionCrit15_1;
+
+TRUNCATE TABLE #ConditionCrit16_1;
+DROP TABLE #ConditionCrit16_1;
+
+TRUNCATE TABLE #ConditionCrit17_1;
+DROP TABLE #ConditionCrit17_1;
+
+TRUNCATE TABLE #VisitCrit18_1;
+DROP TABLE #VisitCrit18_1;
+
+TRUNCATE TABLE #VisitCrit18_1;
+DROP TABLE #VisitCrit18_1;
+
+TRUNCATE TABLE #VisitCrit18_1;
+DROP TABLE #VisitCrit18_1;
+
+TRUNCATE TABLE #ConditionCrit19_1;
+DROP TABLE #ConditionCrit19_1;
+
+TRUNCATE TABLE #VisitCrit18_1;
+DROP TABLE #VisitCrit18_1;
+
+TRUNCATE TABLE #VisitCrit18_1;
+DROP TABLE #VisitCrit18_1;
+
+TRUNCATE TABLE #ConditionCrit25_2;
+DROP TABLE #ConditionCrit25_2;
+
+TRUNCATE TABLE #VisitCrit18_1;
+DROP TABLE #VisitCrit18_1;
+
+TRUNCATE TABLE #VisitCrit18_1;
+DROP TABLE #VisitCrit18_1;
+
+TRUNCATE TABLE #ConditionCrit25_1;
+DROP TABLE #ConditionCrit25_1;
+
+TRUNCATE TABLE #VisitCrit18_1;
+DROP TABLE #VisitCrit18_1;
+
+TRUNCATE TABLE #ProcedureCrit24_1;
+DROP TABLE #ProcedureCrit24_1;
+
+TRUNCATE TABLE #VisitCrit18_1;
+DROP TABLE #VisitCrit18_1;
+
+TRUNCATE TABLE #VisitCrit18_1;
+DROP TABLE #VisitCrit18_1;
+
+TRUNCATE TABLE #ConditionCrit26_1;
+DROP TABLE #ConditionCrit26_1;
+
+TRUNCATE TABLE #VisitCrit18_1;
+DROP TABLE #VisitCrit18_1;
+
+TRUNCATE TABLE #ConditionCrit27_1;
+DROP TABLE #ConditionCrit27_1;
+
+TRUNCATE TABLE #VisitCrit18_1;
+DROP TABLE #VisitCrit18_1;
+
+TRUNCATE TABLE #ConditionCrit28_1;
+DROP TABLE #ConditionCrit28_1;
+
+TRUNCATE TABLE #ConditionCrit15_1;
+DROP TABLE #ConditionCrit15_1;
+
+TRUNCATE TABLE #DrugCrit22_1;
+DROP TABLE #DrugCrit22_1;
+
+TRUNCATE TABLE #DrugCrit23_1;
+DROP TABLE #DrugCrit23_1;

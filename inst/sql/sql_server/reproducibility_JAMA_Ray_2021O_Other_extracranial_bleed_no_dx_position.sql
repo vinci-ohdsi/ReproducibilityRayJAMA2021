@@ -1045,3 +1045,112 @@ DROP TABLE #included_events;
 
 TRUNCATE TABLE #Codesets;
 DROP TABLE #Codesets;
+ 
+-- DELETE TEMP TABLES
+ TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #ConditionCrit18_1;
+DROP TABLE #ConditionCrit18_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #ConditionCrit12_1;
+DROP TABLE #ConditionCrit12_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #ConditionCrit3_1;
+DROP TABLE #ConditionCrit3_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #ProcedureCrit16_1;
+DROP TABLE #ProcedureCrit16_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #ConditionCrit13_1;
+DROP TABLE #ConditionCrit13_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #ConditionCrit7_1;
+DROP TABLE #ConditionCrit7_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #ProcedureCrit16_1;
+DROP TABLE #ProcedureCrit16_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #ConditionCrit14_1;
+DROP TABLE #ConditionCrit14_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #ConditionCrit8_1;
+DROP TABLE #ConditionCrit8_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #ProcedureCrit16_1;
+DROP TABLE #ProcedureCrit16_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #ConditionCrit15_1;
+DROP TABLE #ConditionCrit15_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #ConditionCrit17_1;
+DROP TABLE #ConditionCrit17_1;
+
+TRUNCATE TABLE #VisitCrit0_1;
+DROP TABLE #VisitCrit0_1;
+
+TRUNCATE TABLE #ProcedureCrit16_1;
+DROP TABLE #ProcedureCrit16_1;
