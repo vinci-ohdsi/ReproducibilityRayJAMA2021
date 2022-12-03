@@ -424,11 +424,5 @@ DROP TABLE #Codesets;
  TRUNCATE TABLE #VisitCrit4_1;
 DROP TABLE #VisitCrit4_1;
 
-TRUNCATE TABLE #VisitCrit4_1;
-DROP TABLE #VisitCrit4_1;
-
-TRUNCATE TABLE #VisitCrit4_1;
-DROP TABLE #VisitCrit4_1;
-
 TRUNCATE TABLE #ConditionCrit3_1;
 DROP TABLE #ConditionCrit3_1;

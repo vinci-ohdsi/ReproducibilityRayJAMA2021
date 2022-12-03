@@ -2592,62 +2592,26 @@ DROP TABLE #ConditionCrit17_1;
 TRUNCATE TABLE #VisitCrit18_1;
 DROP TABLE #VisitCrit18_1;
 
-TRUNCATE TABLE #VisitCrit18_1;
-DROP TABLE #VisitCrit18_1;
-
-TRUNCATE TABLE #VisitCrit18_1;
-DROP TABLE #VisitCrit18_1;
-
 TRUNCATE TABLE #ConditionCrit19_1;
 DROP TABLE #ConditionCrit19_1;
-
-TRUNCATE TABLE #VisitCrit18_1;
-DROP TABLE #VisitCrit18_1;
-
-TRUNCATE TABLE #VisitCrit18_1;
-DROP TABLE #VisitCrit18_1;
 
 TRUNCATE TABLE #ConditionCrit25_2;
 DROP TABLE #ConditionCrit25_2;
 
-TRUNCATE TABLE #VisitCrit18_1;
-DROP TABLE #VisitCrit18_1;
-
-TRUNCATE TABLE #VisitCrit18_1;
-DROP TABLE #VisitCrit18_1;
-
 TRUNCATE TABLE #ConditionCrit25_1;
 DROP TABLE #ConditionCrit25_1;
-
-TRUNCATE TABLE #VisitCrit18_1;
-DROP TABLE #VisitCrit18_1;
 
 TRUNCATE TABLE #ProcedureCrit24_1;
 DROP TABLE #ProcedureCrit24_1;
 
-TRUNCATE TABLE #VisitCrit18_1;
-DROP TABLE #VisitCrit18_1;
-
-TRUNCATE TABLE #VisitCrit18_1;
-DROP TABLE #VisitCrit18_1;
-
 TRUNCATE TABLE #ConditionCrit26_1;
 DROP TABLE #ConditionCrit26_1;
-
-TRUNCATE TABLE #VisitCrit18_1;
-DROP TABLE #VisitCrit18_1;
 
 TRUNCATE TABLE #ConditionCrit27_1;
 DROP TABLE #ConditionCrit27_1;
 
-TRUNCATE TABLE #VisitCrit18_1;
-DROP TABLE #VisitCrit18_1;
-
 TRUNCATE TABLE #ConditionCrit28_1;
 DROP TABLE #ConditionCrit28_1;
-
-TRUNCATE TABLE #ConditionCrit15_1;
-DROP TABLE #ConditionCrit15_1;
 
 TRUNCATE TABLE #DrugCrit22_1;
 DROP TABLE #DrugCrit22_1;

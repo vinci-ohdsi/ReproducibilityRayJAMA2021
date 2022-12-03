@@ -172,6 +172,18 @@
       "Repository": "CRAN",
       "Hash": "d1628f3a366f6eef647a6ece0b4b5ffc"
     },
+    "VaTools": {
+      "Package": "VaTools",
+      "Version": "0.1.0",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "VaTools",
+      "RemoteUsername": "suchard-group",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "fc7d99c36cf2b6af02d5a82ba0077eb3633adcd1",
+      "Hash": "303aeec9327d3f2624e780a8262a9214"
+    },
     "XML": {
       "Package": "XML",
       "Version": "3.99-0.5",

@@ -544,12 +544,3 @@ DROP TABLE #VisitCrit1_1;
 
 TRUNCATE TABLE #ConditionCrit2_1;
 DROP TABLE #ConditionCrit2_1;
-
-TRUNCATE TABLE #ConditionCrit2_1;
-DROP TABLE #ConditionCrit2_1;
-
-TRUNCATE TABLE #ConditionCrit2_1;
-DROP TABLE #ConditionCrit2_1;
-
-TRUNCATE TABLE #VisitCrit1_1;
-DROP TABLE #VisitCrit1_1;
