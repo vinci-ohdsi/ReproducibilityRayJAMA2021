@@ -1,0 +1,38 @@
+Package: FeatureExtraction
+Type: Package
+Title: Generating Features for a Cohort
+Version: 3.0.1
+Date: 2020-07-31
+Authors@R: c(
+ person("Martijn", "Schuemie", , "schuemie@ohdsi.org", role = c("aut", "cre")),
+ person("Marc", "Suchard", role = c("aut")),
+ person("Patrick", "Ryan", role = c("aut")),
+ person("Jenna", "Reps", role = c("aut"))
+ )
+Maintainer: Martijn J. Schuemie <schuemie@ohdsi.org>
+Description: An R package for generating features (covariates) for a cohort using data in the Common Data Model.
+License: Apache License 2.0
+VignetteBuilder: knitr
+URL: https://github.com/OHDSI/FeatureExtraction
+BugReports: https://github.com/OHDSI/FeatureExtraction/issues
+Depends: R (>= 3.2.2), DatabaseConnector (>= 3.0.0), Andromeda
+Imports: methods, dplyr, rJava, jsonlite, SqlRender (>= 1.6.0), ParallelLogger,
+    cli, pillar, readr, rlang
+Suggests: testthat, knitr, rmarkdown
+NeedsCompilation: no
+RoxygenNote: 7.1.1
+Encoding: UTF-8
+Author: Martijn Schuemie [aut, cre],
+ Marc Suchard [aut],
+ Patrick Ryan [aut],
+ Jenna Reps [aut]
+Built: R 4.0.3; ; 2022-11-21 19:32:39 UTC; windows
+RemoteType: github
+RemoteHost: api.github.com
+RemoteRepo: FeatureExtraction
+RemoteUsername: ohdsi
+RemoteRef: v3.0.1
+GithubHost: api.github.com
+GithubRepo: FeatureExtraction
+GithubUsername: ohdsi
+GithubRef: v3.0.1
