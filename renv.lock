@@ -181,8 +181,8 @@
       "RemoteRepo": "VaTools",
       "RemoteUsername": "suchard-group",
       "RemoteRef": "HEAD",
-      "RemoteSha": "fc7d99c36cf2b6af02d5a82ba0077eb3633adcd1",
-      "Hash": "303aeec9327d3f2624e780a8262a9214"
+      "RemoteSha": "be0c4019f1721a1b5d8052f39ba44946188fde93",
+      "Hash": "e32dd80ae9c55a30e3cfeb901c804d17"
     },
     "XML": {
       "Package": "XML",
